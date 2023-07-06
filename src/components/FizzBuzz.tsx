@@ -5,9 +5,12 @@ const [currentValue, queueNewValue] = useState<number>(1);
 const [storedNumber, queueStoredNumber] = useState<(number|string)[]>([]);
 
 const handleNextClick = () => {
-    queueNewValue(prevNumber => prevNumber + 1);
+    const number = 0;
+    queueNewValue(prevNum => prevNum + 1);
     queueStoredNumber(prevValue =>[...prevValue, currentValue] );
-};
+
+    }
+
 
 
     return (

@@ -1,18 +1,17 @@
 import { useState } from "react";
-import { getFizzBuzz } from "../utils/getFizzBuzz";
+import { isFizzBuzz } from "../utils/isFizzBuzz";
+
+type fizzBuzzArrayType = (number|string)[];
 
 export default function FizzBuzz(): JSX.Element {
 const [currentValue, queueNewValue] = useState<number>(1);
-const [storedNumber, queueStoredNumber] = useState<(number|string)[]>([]);
+const [storedNumber, queueStoredNumber] = useState<fizzBuzzArrayType>([]);
 
 const handleNextClick = () => {
-    const number = 0;
     queueNewValue(prevNum => prevNum + 1);
-    queueStoredNumber(prevValue =>[...prevValue, getFizzBuzz(currentValue)] );
+    queueStoredNumber(prevValue =>[...prevValue, isFizzBuzz(currentValue)] );
 
     }
-
-
 
     return (
         <>
@@ -21,8 +20,5 @@ const handleNextClick = () => {
           <button onClick={handleNextClick }>Next</button>
         </>
       );
-
-
-
 
 }

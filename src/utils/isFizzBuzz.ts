@@ -1,4 +1,4 @@
-export function getFizzBuzz(number:number): string|number{
+export function isFizzBuzz(number:number): string|number{
 
 
 if (number % 3 === 0 && number % 5 === 0){

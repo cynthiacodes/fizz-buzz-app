@@ -12,9 +12,10 @@ export default function FizzBuzz(): JSX.Element {
     queueStoredNumber((prevValue) => [...prevValue, isFizzBuzz(currentValue)]);
   };
 
-  const convertToList = (InputValue: number | string): JSX.Element => {
-    return <li>{InputValue}</li>;
+  const convertToList = (inputValue: number | string, index: number): JSX.Element => {
+    return <li key ={index}>{inputValue}</li>;
   };
+
   const listOfValues = storedNumber.map(convertToList);
 
   return (
